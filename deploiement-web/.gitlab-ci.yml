@@ -1,0 +1,23 @@
+image: python:3.8
+
+stages:
+  - generate
+  - deploy
+
+generate:
+  stage: generate
+  script:
+    - pip install pipenv
+    - pipenv install --dev --deploy
+    - pipenv run jupyter nbconvert --to=html --output-dir=dist --output=index Notebook-scraping-monster-V1.ipynb
+  artifacts:
+    paths:
+      - dist
+
+pages:
+  stage: deploy
+  script:
+    - cp -R dist public
+  artifacts:
+    paths:
+      - public/

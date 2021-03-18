@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+jupyter = "*"
+pandas = "*"
+seaborn = "*"
+psycopg2-binary = "*"
+sqlalchemy = "*"
+sns = "*"
+matplotlib = "*"
+folium = "*"
+requests = "*"
+bs4 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
